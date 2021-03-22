@@ -22,7 +22,7 @@ RUN mkdir diyhue config ${WORKING_DIR}
 RUN apk add -q -u python3 openssl nmap psmisc iproute2 alpine-sdk build-base
 
 # Download diyhue and untar it
-RUN curl -J -L -o $diyhue.tar.gz "https://github.com/diyhue/diyHue/archive/dev.tar.gz" \
+RUN curl -J -L -o $diyhue.tar.gz "https://github.com/diyhue/diyHue/archive/master.tar.gz" \
 	&& tar xzvf $diyhue.tar.gz --strip-components=1 -C diyhue \
 	&& rm -rf $diyhue.tar.gz \
 	&& pip3 install -r /diyhue/requirements.txt --no-cache-dir
